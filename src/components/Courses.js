@@ -26,7 +26,7 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
         <header>
           <h1 className='Header'>Enter GPA for 4 Courses</h1>
         </header>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form>
           <ul className='Courses'>
             {[...Array(Math.floor(numOfCourses))].map((x, i) => (
               <li key={Math.random() * 1000}>
