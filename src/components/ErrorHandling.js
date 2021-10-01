@@ -6,11 +6,11 @@ import Button from "react-bootstrap/Button";
 const ErrorHandling = ({setPage}) => {
   return (
     <Container
-      className='d-flex justify-content-center'
+      className='d-flex align-items-center justify-content-center'
       style={{ minHeight: "100vh" }}>
       <div className='w-100' style={{ maxWidth: "400px" }}>
         <header>
-          <h1 className='Header'>!!!Invalid value for current CGPA!!!</h1>
+          <h1 className='Header'>!!! Invalid value for current CGPA!!!</h1>
         </header>
         <div className="ctr">
           <Form>

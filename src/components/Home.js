@@ -26,7 +26,7 @@ const Home = ({ user, setUser, setPage }) => {
   return (
     <div className='Home'>
       <Container
-        className='d-flex justify-content-center'
+        className='d-flex align-items-center justify-content-center'
         style={{ minHeight: "100vh" }}>
         <div className='w-100' style={{ maxWidth: "400px" }}>
           <header>
