@@ -10,8 +10,12 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
   const { register, handleSubmit } = useForm();
 
   let gpa = [];
-  for (var i = 0; i < numOfCourses; i++) {
-    gpa.push(4.0);
+  if (!courseGpa.length) {
+    for (var i = 0; i < numOfCourses; i++) {
+      gpa.push(4.0);
+    }
+  } else {
+    gpa = courseGpa;
   }
 
   useEffect(() => {
@@ -35,7 +39,7 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
                     <Form.Label>Course {i + 1}:</Form.Label>
                     <Form.Select
                       aria-label='Default select example'
-                      defaultValue='4.0'
+                      defaultValue={gpa[i]}
                       {...register("gpa", { required: true })}
                       onChange={(e) => {
                         gpa[i] = e.target.value;
