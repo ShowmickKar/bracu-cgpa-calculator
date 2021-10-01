@@ -39,7 +39,7 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
                     <Form.Label>Course {i + 1}:</Form.Label>
                     <Form.Select
                       aria-label='Default select example'
-                      defaultValue={gpa[i]}
+                      defaultValue={4.0}
                       {...register("gpa", { required: true })}
                       onChange={(e) => {
                         gpa[i] = e.target.value;
