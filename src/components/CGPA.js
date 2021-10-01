@@ -12,7 +12,7 @@ const CGPA = ({ user, courseGpa, setPage }) => {
     let cgpa =
       totalPoint /
       (parseFloat(user["coursesCompleted"]) + parseFloat(courseGpa.length));
-    return Number((cgpa).toFixed(2));
+    return Number(cgpa.toFixed(2));
   };
   return (
     <Container
@@ -22,28 +22,30 @@ const CGPA = ({ user, courseGpa, setPage }) => {
         <header>
           <h1 className='Header'>Your CGPA is: {calculate()}</h1>
         </header>
-        <Form>
-          <Form.Group>
-            <Button
-              className='ml-1'
-              variant='primary'
-              type='submit'
-              onClick={() => {
-                setPage("Courses");
-              }}>
-              Go Back
-            </Button>
-            <Button
-              className='ml-1'
-              variant='secondary'
-              type='submit'
-              onClick={() => {
-                setPage("Home");
-              }}>
-              Start Over
-            </Button>
-          </Form.Group>
-        </Form>
+        <div className='ctr'>
+          <Form>
+            <Form.Group>
+              <Button
+                className='ml-1'
+                variant='primary'
+                type='submit'
+                onClick={() => {
+                  setPage("Courses");
+                }}>
+                Go Back
+              </Button>
+              <Button
+                className='ml-1'
+                variant='secondary'
+                type='submit'
+                onClick={() => {
+                  setPage("Home");
+                }}>
+                Start Over
+              </Button>
+            </Form.Group>
+          </Form>
+        </div>
       </div>
     </Container>
   );
