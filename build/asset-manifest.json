@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/bracu-cgpa-calculator/static/css/main.f3f4de6e.chunk.css",
-    "main.js": "/bracu-cgpa-calculator/static/js/main.a4747772.chunk.js",
-    "main.js.map": "/bracu-cgpa-calculator/static/js/main.a4747772.chunk.js.map",
+    "main.css": "/bracu-cgpa-calculator/static/css/main.196f3eb1.chunk.css",
+    "main.js": "/bracu-cgpa-calculator/static/js/main.00974f51.chunk.js",
+    "main.js.map": "/bracu-cgpa-calculator/static/js/main.00974f51.chunk.js.map",
     "runtime-main.js": "/bracu-cgpa-calculator/static/js/runtime-main.54b301eb.js",
     "runtime-main.js.map": "/bracu-cgpa-calculator/static/js/runtime-main.54b301eb.js.map",
     "static/css/2.f2512455.chunk.css": "/bracu-cgpa-calculator/static/css/2.f2512455.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.6db09a14.chunk.js.map": "/bracu-cgpa-calculator/static/js/2.6db09a14.chunk.js.map",
     "index.html": "/bracu-cgpa-calculator/index.html",
     "static/css/2.f2512455.chunk.css.map": "/bracu-cgpa-calculator/static/css/2.f2512455.chunk.css.map",
-    "static/css/main.f3f4de6e.chunk.css.map": "/bracu-cgpa-calculator/static/css/main.f3f4de6e.chunk.css.map",
+    "static/css/main.196f3eb1.chunk.css.map": "/bracu-cgpa-calculator/static/css/main.196f3eb1.chunk.css.map",
     "static/js/2.6db09a14.chunk.js.LICENSE.txt": "/bracu-cgpa-calculator/static/js/2.6db09a14.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.54b301eb.js",
     "static/css/2.f2512455.chunk.css",
     "static/js/2.6db09a14.chunk.js",
-    "static/css/main.f3f4de6e.chunk.css",
-    "static/js/main.a4747772.chunk.js"
+    "static/css/main.196f3eb1.chunk.css",
+    "static/js/main.00974f51.chunk.js"
   ]
 }
