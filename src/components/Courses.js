@@ -7,25 +7,8 @@ import Select from "react-select";
 import { useEffect } from "react";
 
 const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
-  // const options = [
-  //   { label: "4.0", value: "4.0" },
-  //   { label: "3.7", value: "3.7" },
-  //   { label: "3.3", value: "3.3" },
-  //   { label: "3.0", value: "3.0" },
-  //   { label: "2.7", value: "2.7" },
-  //   { label: "2.3", value: "2.3" },
-  //   { label: "2.0", value: "2.0" },
-  //   { label: "1.7", value: "1.7" },
-  //   { label: "1.3", value: "1.3" },
-  //   { label: "0.7", value: "0.7" },
-  //   { label: "<0.7 (Fail)", value: "0" },
-  // ];
-
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    console.log(gpa);
-  };
+
   let gpa = [];
   for (var i = 0; i < numOfCourses; i++) {
     gpa.push(4.0);
@@ -33,7 +16,7 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
 
   useEffect(() => {
     setCourseGpa(gpa);
-  }, [page])
+  }, [page]);
 
   return (
     <Container
@@ -55,10 +38,7 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
                       defaultValue='4.0'
                       {...register("gpa", { required: true })}
                       onChange={(e) => {
-                        // console.log(e.target.value);
                         gpa[i] = e.target.value;
-                        // console.log(gpa);
-                        // setCourseGpa(gpa);
                       }}>
                       <option value='4.0'>4.0</option>
                       <option value='3.7'>3.7</option>
@@ -83,7 +63,7 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
               className='ml-1'
               variant='primary'
               type='submit'
-              onClick={() => {                                
+              onClick={() => {
                 setPage("CGPA");
                 setCourseGpa(gpa);
               }}>
