@@ -19,6 +19,7 @@ const Home = ({ user, setUser, setPage }) => {
       setUser(user);
       setPage("Courses");
     } catch (err) {
+      console.log(err);
       setPage("ErrorHandling");
     }
   };
