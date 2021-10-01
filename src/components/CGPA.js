@@ -2,8 +2,12 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { useEffect } from "react";
 
-const CGPA = ({ user, courseGpa, setPage }) => {
+const CGPA = ({ user, courseGpa, setCourseGpa, page, setPage }) => {
+  useEffect(() => {
+    setCourseGpa(courseGpa);
+  }, [page]);
   const calculate = () => {
     let totalPoint = user["currentCgpa"] * user["coursesCompleted"];
     for (var i = 0; i < courseGpa.length; i++) {
@@ -12,7 +16,7 @@ const CGPA = ({ user, courseGpa, setPage }) => {
     let cgpa =
       totalPoint /
       (parseFloat(user["coursesCompleted"]) + parseFloat(courseGpa.length));
-    return Number(cgpa.toFixed(2));
+    return cgpa.toFixed(2);
   };
   return (
     <Container
@@ -25,15 +29,16 @@ const CGPA = ({ user, courseGpa, setPage }) => {
         <div className='ctr'>
           <Form>
             <Form.Group>
-              <Button
+              {/* Disabled the Go Back option due to some state management bug */}
+              {/* <Button
                 className='ml-1'
                 variant='primary'
                 type='submit'
-                onClick={() => {
+                onClick={() => {                  
                   setPage("Courses");
                 }}>
                 Go Back
-              </Button>
+              </Button> */}
               <Button
                 className='ml-1'
                 variant='secondary'
