@@ -9,18 +9,20 @@ import { useEffect } from "react";
 const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
   const { register, handleSubmit } = useForm();
 
-  let gpa = [];
   if (!courseGpa.length) {
     for (var i = 0; i < numOfCourses; i++) {
-      gpa.push(4.0);
+      courseGpa.push(4.0);
     }
-  } else {
-    gpa = courseGpa;
   }
 
+  const setDefaultValue = (i) => {
+    return courseGpa[i];
+  };
+
   useEffect(() => {
-    setCourseGpa(gpa);
+    setCourseGpa(courseGpa);
   }, [page]);
+
 
   return (
     <Container
@@ -36,13 +38,14 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
               <li key={Math.random() * 1000}>
                 <div>
                   <Form.Group className='mb-3'>
-                    <Form.Label>Course {i + 1}:</Form.Label>
+                    <Form.Label>Course {i + 1}: temp: {setDefaultValue(i)}</Form.Label>
                     <Form.Select
                       aria-label='Default select example'
-                      defaultValue={4.0}
+                      // defaultValue={setDefaultValue(i)}
+                      defaultValue={i % 2 === 0 ? "4.0" : "3.7"}
                       {...register("gpa", { required: true })}
                       onChange={(e) => {
-                        gpa[i] = e.target.value;
+                        courseGpa[i] = e.target.value;
                       }}>
                       <option value='4.0'>4.0</option>
                       <option value='3.7'>3.7</option>
@@ -69,7 +72,7 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
               type='submit'
               onClick={() => {
                 setPage("CGPA");
-                setCourseGpa(gpa);
+                setCourseGpa(courseGpa);
               }}>
               Next
             </Button>
