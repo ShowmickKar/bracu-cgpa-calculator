@@ -38,12 +38,11 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
                 <div>
                   <Form.Group className='mb-3'>
                     <Form.Label>
-                      Course {i + 1}: temp: {setDefaultValue(i)}
+                      Course {i + 1}:
                     </Form.Label>
                     <Form.Select
                       aria-label='Default select example'
-                      // defaultValue={setDefaultValue(i)}
-                      defaultValue={i % 2 === 0 ? "4.0" : "3.7"}
+                      defaultValue={setDefaultValue(i)}
                       {...register("gpa", { required: true })}
                       onChange={(e) => {
                         courseGpa[i] = e.target.value;
