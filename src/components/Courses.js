@@ -23,7 +23,6 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
     setCourseGpa(courseGpa);
   }, [page]);
 
-
   return (
     <Container
       className='d-flex align-items-center justify-content-center'
@@ -38,7 +37,9 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
               <li key={Math.random() * 1000}>
                 <div>
                   <Form.Group className='mb-3'>
-                    <Form.Label>Course {i + 1}: temp: {setDefaultValue(i)}</Form.Label>
+                    <Form.Label>
+                      Course {i + 1}: temp: {setDefaultValue(i)}
+                    </Form.Label>
                     <Form.Select
                       aria-label='Default select example'
                       // defaultValue={setDefaultValue(i)}
