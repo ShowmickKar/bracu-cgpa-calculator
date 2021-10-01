@@ -24,7 +24,7 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
       style={{ minHeight: "100vh" }}>
       <div className='w-100' style={{ maxWidth: "400px" }}>
         <header>
-          <h1 className='Header'>Enter GPA for 4 Courses</h1>
+          <h1 className='Header'>Enter GPA for {numOfCourses} Courses</h1>
         </header>
         <Form>
           <ul className='Courses'>
