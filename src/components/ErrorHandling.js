@@ -1,34 +1,30 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { Card, Button, Form } from "react-bootstrap";
 
-const ErrorHandling = ({setPage}) => {
+const ErrorHandling = ({ setPage }) => {
   return (
-    <Container
-      className='d-flex align-items-center justify-content-center'
-      style={{ minHeight: "100vh" }}>
-      <div className='w-100' style={{ maxWidth: "400px" }}>
-        <header>
-          <h1 className='Header'>!!! Invalid value for current CGPA!!!</h1>
-        </header>
-        <div className="ctr">
-          <Form>
-            <Form.Group>
-              <Button
-                className='ml-1'
-                variant='primary'
-                type='submit'
-                onClick={() => {
-                  setPage("Home");
-                }}>
-                Go Back
-              </Button>            
-            </Form.Group>
-          </Form>
-        </div>
-      </div>
-    </Container>
+    <Card>
+      <Card.Body>
+        <Card.Title className='text-center' style={{ color: "red" }}>
+          <h2>!!! Error Occurred !!!</h2>
+        </Card.Title>
+        <Card.Subtitle className='text-center mb-3' style={{ color: "grey" }}>
+          Invalid data type for current CGPA
+        </Card.Subtitle>
+        <Form>
+          <Form.Group className='text-center mb-1'>
+            <Button
+              variant='danger'
+              type='submit'
+              onCLick={() => {
+                setPage("Home");
+              }}>
+              Go Back
+            </Button>
+          </Form.Group>
+        </Form>
+      </Card.Body>
+    </Card>
   );
 };
 

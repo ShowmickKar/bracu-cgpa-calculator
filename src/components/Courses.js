@@ -1,73 +1,55 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import { useForm } from "react-hook-form";
-import Select from "react-select";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { Card, Button, Form, ListGroup, ListGroupItem } from "react-bootstrap";
 
 const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
-  const { register, handleSubmit } = useForm();
-
   if (!courseGpa.length) {
     for (var i = 0; i < numOfCourses; i++) {
       courseGpa.push(4.0);
     }
   }
 
-  const setDefaultValue = (i) => {
-    return courseGpa[i];
-  };
-
   useEffect(() => {
     setCourseGpa(courseGpa);
   }, [page]);
 
   return (
-    <Container
-      className='d-flex align-items-center justify-content-center'
-      style={{ minHeight: "100vh" }}>
-      <div className='w-100' style={{ maxWidth: "400px" }}>
-        <header>
-          <h1 className='Header'>Enter GPA for {numOfCourses} Courses</h1>
-        </header>
+    <Card>
+      <Card.Body>
+        <Card.Title className='text-center'>
+          <h2 style={{ color: "red" }}>Enter GPA for 4 courses</h2>
+        </Card.Title>
         <Form>
-          <ul className='Courses'>
-            {[...Array(Math.floor(numOfCourses))].map((x, i) => (
-              <li key={Math.random() * 1000}>
-                <div>
-                  <Form.Group className='mb-3'>
-                    <Form.Label>
-                      Course {i + 1}:
-                    </Form.Label>
-                    <Form.Select
-                      aria-label='Default select example'
-                      defaultValue={setDefaultValue(i)}
-                      {...register("gpa", { required: true })}
-                      onChange={(e) => {
-                        courseGpa[i] = e.target.value;
-                      }}>
-                      <option value='4.0'>4.0</option>
-                      <option value='3.7'>3.7</option>
-                      <option value='3.3'>3.3</option>
-                      <option value='3.0'>3.0</option>
-                      <option value='2.7'>2.7</option>
-                      <option value='2.3'>2.3</option>
-                      <option value='2.0'>2.0</option>
-                      <option value='1.7'>1.7</option>
-                      <option value='1.3'>1.3</option>
-                      <option value='1.0'>1.0</option>
-                      <option value='0.7'>0.7</option>
-                      <option value='0'>{"<"}0.7 (Fail)</option>
-                    </Form.Select>
-                  </Form.Group>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <Form.Group className='mb-4'>
+          <Form.Group className='mb-3'>
+            <ListGroup>
+              {[...Array(Math.floor(numOfCourses))].map((x, i) => (
+                <ListGroup.Item key={Math.random() * 1000}>
+                  <Form.Label>Course: {i + 1}:</Form.Label>
+                  <Form.Select
+                    aria-label='Default select example'
+                    defaultValue={4}
+                    onChange={(e) => {
+                      courseGpa[i] = e.target.value;
+                    }}>
+                    <option value='4.0'>4.0</option>
+                    <option value='3.7'>3.7</option>
+                    <option value='3.3'>3.3</option>
+                    <option value='3.0'>3. 0</option>
+                    <option value='2.7'>2.7</option>
+                    <option value='2.3'>2.3</option>
+                    <option value='2.0'>2.0</option>
+                    <option value='1.7'>1.7</option>
+                    <option value='1.3'>1.3</option>
+                    <option value='1.0'>1.0</option>
+                    <option value='0.7'>0.7</option>
+                    <option value='0'>{"<"}0.7 (Fail)</option>
+                  </Form.Select>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          </Form.Group>
+          <Form.Group className='text-center mb-1'>
             <Button
-              className='ml-1'
+              className='mx-1'
               variant='primary'
               type='submit'
               onClick={() => {
@@ -77,17 +59,17 @@ const Courses = ({ numOfCourses, courseGpa, setCourseGpa, page, setPage }) => {
               Next
             </Button>
             <Button
-              className='ml-1'
               variant='secondary'
+              className='mx-1'
               onClick={() => {
                 setPage("Home");
               }}>
-              Go Back
+              Previous
             </Button>
           </Form.Group>
         </Form>
-      </div>
-    </Container>
+      </Card.Body>
+    </Card>
   );
 };
 
