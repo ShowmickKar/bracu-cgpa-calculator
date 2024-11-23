@@ -1,8 +1,6 @@
 # bracu-cgpa-calculator
 A CGPA calculator made for Brac University students! 
 
-!!! UI completely ripped off from <a href="https://github.com/sanjib-sen" target="_blank">Sanjib Kumar Sen</a> bhai :p
-
 ## Technologies Used
 
 React, React form hook, bootstrap, javascript
